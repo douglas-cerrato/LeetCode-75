@@ -10,7 +10,7 @@
 # Output: [0,1]
 # Explanation: Because nums[0] + nums[1] == 9, we return [0,1].
 
-def twoSum(nums, target):
+def twoSum(nums: list[int], target: int) -> list[int]:
     for index, number in enumerate(nums):
         for index2, number2 in enumerate(nums):
             if((index != index2) and (number+number2 == target)):
@@ -32,3 +32,11 @@ def main():
     print("Test Case 3: {}".format([0,1] == twoSum(nums3, target3)))
 
 main()
+
+# TODO: After submitting this solution to Leetcode, it seems to be running
+# an average of 3200ms when working with a bigger data set. I need to find
+# a faster way to complete this problem to around 60ms when working with 
+# larger data sets. I have an idea that that with a hash map I can complete
+# this
+# Link to LeetCode Problem:
+# https://leetcode.com/problems/two-sum/
