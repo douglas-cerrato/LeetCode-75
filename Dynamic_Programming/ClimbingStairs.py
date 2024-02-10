@@ -21,17 +21,14 @@
 
 
 def climbStairs(n: int) -> int:
-    #differentWays = 0
-    #firstCase = [1 for x in range(n)]
-    
-    return fibsequence(n)
-
-    # SUGGESTION: I believe one way we can tackle this idea has something to do with finding 
-    # patterns with in our first case list. We know no matter what that every entry will have
-    # atleaast one route where we consecutively take 1 step to reach n. So we could find some
-    # way where we look for two consecutive ones, and swap them for a 2. However, currently
-    # not sure how I am going to do this to find different ways where a list can hold 
-    # consecutive 2 steps to reach n
+    # IDEA: The brute force attempt I am going to try is by making a tree based
+    # on all possible paths of steps we can take. I already know that the fib
+    # sequence returns all possible amounts (I still want to figure out why
+    # this is the case), however I want to try to bruteforce this so I understand 
+    # better. With my decision tree I am going to start at 0, and recursively 
+    # go down a tree of all possibilites. For each node, I can either go 2 steps
+    # or 1, and the plan is to exhaust all possibilities to figure out all paths. 
+    pass
 
 def fibsequence(n: int) -> int:
     x,y = 0,1
