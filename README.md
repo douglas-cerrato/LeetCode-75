@@ -4,7 +4,7 @@ Welcome to LeetCode-75, a repository dedicated to solving 75 LeetCode problems c
 
 📚 **Purpose:**
 
-This repository is curated to provide a comprehensive set of problems aimed at enhancing your skills in various areas of coding. Whether you're a beginner looking to strengthen your fundamentals or an experienced coder brushing up on your skills, these problems offer valuable practice and insight.
+This repository is curated to provide a comprehensive set of problems aimed at enhancing my skills in various areas of coding. As an junior developer brushing up on my skills, these problems offer valuable practice and insight.
 
 🔍 **Topics Covered:**
 
@@ -25,6 +25,6 @@ All problems included in this repository can be found in the [Blind 75 LeetCode 
 
 📬 **Contact:**
 
-If you have any questions, suggestions, or feedback, please feel free to reach out via [email](mailto:your-email@example.com) or [create an issue](https://github.com/your-username/LeetCode-75/issues).
+If you have any questions, suggestions, or feedback, please feel free to reach out via [email](mailto:douglascerrato2@gmail.com).
 
 Happy coding! 🚀
