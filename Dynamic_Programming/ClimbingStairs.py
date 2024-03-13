@@ -30,35 +30,18 @@ def climbStairs(n: int) -> int:
             startingPoint.remove(x)
             lastVarInX = x[-1]
 
-            # Appending both options to our tempList based on our previous list entry 
-            if(lastVarInX + 1 < n):
-                # If the variable takes on step and is still less than 1, append to tempList
-                tempList.append([lastVarInX, lastVarInX + 1])
-            elif(lastVarInX + 1 == n):
-                # Our path has hit N, meaning this is a possible path
-                amountOfPossibilities+=1
-            else:
-                # Our path exceeds the variable N
-                continue
+            if(lastVarInX + 1 < n): tempList.append([lastVarInX, lastVarInX + 1])
+            elif(lastVarInX + 1 == n): amountOfPossibilities+=1
+            else: pass
 
-            # Appending both options to our tempList based on our previous list entry 
-            if(lastVarInX + 2 < n):
-                # If the variable takes on step and is still less than 1, append to tempList
-                tempList.append([lastVarInX, lastVarInX + 2])
-            elif(lastVarInX + 2 == n):
-                # Our path has hit N, meaning this is a possible path
-                amountOfPossibilities+=1
-            else:
-                # Our path exceeds the variable N
-                continue
+            if(lastVarInX + 2 < n): tempList.append([lastVarInX, lastVarInX + 2])
+            elif(lastVarInX + 2 == n): amountOfPossibilities+=1
+            else: pass
 
             if not startingPoint:
-                print("We have cleared through all of startingPoint.")
-                print("passing tempList into our startingPoint:")
-                print(tempList)
                 startingPoint = tempList.copy()
                 tempList = []
-    print("Possible paths amount is ", amountOfPossibilities)
+        
     return amountOfPossibilities
 
 
@@ -75,12 +58,12 @@ def main():
     print("Test Case 1: {}".format(climbStairs(2)==2))
     print("Test Case 2: {}".format(climbStairs(3)==3))
     print("Test Case 3: {}".format(climbStairs(4)==5))
-    #print("Test Case 4: {}".format(climbStairs(5)==8))
-    #print("Test Case 5: {}".format(climbStairs(6)==13))  
-    #print("Test Case 6: {}".format(climbStairs(7)==21))
-    #print("Test Case 7: {}".format(climbStairs(8)==34))
-    #print("Test Case 8: {}".format(climbStairs(9)==55))
-    #print("Test Case 9: {}".format(climbStairs(10)==89))
+    print("Test Case 4: {}".format(climbStairs(5)==8))
+    print("Test Case 5: {}".format(climbStairs(6)==13))  
+    print("Test Case 6: {}".format(climbStairs(7)==21))
+    print("Test Case 7: {}".format(climbStairs(8)==34))
+    print("Test Case 8: {}".format(climbStairs(9)==55))
+    print("Test Case 9: {}".format(climbStairs(10)==89))
 
 
 main()
