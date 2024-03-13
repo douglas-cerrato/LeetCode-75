@@ -21,14 +21,32 @@
 
 
 def climbStairs(n: int) -> int:
-    # IDEA: The brute force attempt I am going to try is by making a tree based
-    # on all possible paths of steps we can take. I already know that the fib
-    # sequence returns all possible amounts (I still want to figure out why
-    # this is the case), however I want to try to bruteforce this so I understand 
-    # better. With my decision tree I am going to start at 0, and recursively 
-    # go down a tree of all possibilites. For each node, I can either go 2 steps
-    # or 1, and the plan is to exhaust all possibilities to figure out all paths. 
-    pass
+    startingPoint = [[0]]
+    amountOfPossibilities = 0
+    tempList = []
+
+    while(startingPoint):
+        for x in startingPoint:
+            startingPoint.remove(x)
+            lastVarInX = x[-1]
+
+            if(lastVarInX + 1 < n): tempList.append([lastVarInX, lastVarInX + 1])
+            elif(lastVarInX + 1 == n): amountOfPossibilities+=1
+            else: pass
+
+            if(lastVarInX + 2 < n): tempList.append([lastVarInX, lastVarInX + 2])
+            elif(lastVarInX + 2 == n): amountOfPossibilities+=1
+            else: pass
+
+            if not startingPoint:
+                #print("tempList b4 transferring to startingPoint: ")
+                #print(tempList)
+                startingPoint = tempList.copy()
+                tempList = []
+    
+    #print("\n\n\nCurrent Amount of Possibilities for {} is {}\n\n\n".format(n, amountOfPossibilities))
+    return amountOfPossibilities
+
 
 def fibsequence(n: int) -> int:
     x,y = 0,1
@@ -40,20 +58,18 @@ def fibsequence(n: int) -> int:
 
 
 def main():
-    print("Test Case 1: {}".format(climbStairs(2)==2))
-    print("Test Case 2: {}".format(climbStairs(3)==3))
-    print("Test Case 3: {}".format(climbStairs(4)==5))
-    print("Test Case 4: {}".format(climbStairs(5)==8))
-    print("Test Case 5: {}".format(climbStairs(6)==13))  
-    print("Test Case 6: {}".format(climbStairs(7)==21))
-    print("Test Case 7: {}".format(climbStairs(8)==34))
-    print("Test Case 8: {}".format(climbStairs(9)==55))
-    print("Test Case 9: {}".format(climbStairs(10)==89))
-
-    # NOTICE: I realized after working with the test cases and their expected results that
-    # each amount of distinct ways you can climb to the top for N is equivalent to the index
-    # N holds at the sequence of the fibonacci sequence. I wonder how this correlates, but
-    # it is clear that if I just implement the fibonnaci sequence using N, I can return back 
-    # the possible amount of ways that there can be steps going up stairs
+    print("Test Case n=2 : {}".format(climbStairs(2)==2))
+    print("Test Case n=3: {}".format(climbStairs(3)==3))
+    print("Test Case n=4: {}".format(climbStairs(4)==5))
+    print("Test Case n=5: {}".format(climbStairs(5)==8))
+    print("Test Case n=6: {}".format(climbStairs(6)==13))  
+    print("Test Case n=7: {}".format(climbStairs(7)==21))
+    print("Test Case n=8: {}".format(climbStairs(8)==34))
+    print("Test Case n=9: {}".format(climbStairs(9)==55))
+    print("Test Case n=10: {}".format(climbStairs(10)==89))
+    print("Test Case n=15: {}".format(climbStairs(15)==987))
+    # Lol doing this one with the exhaustion method is crazy, rough estimate 
+    # time consumption around a hour and a half
+    #print("Test Case m=45: {}".format(climbStairs(45)==1836311903))
 
 main()
