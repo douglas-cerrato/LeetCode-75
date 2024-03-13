@@ -4,7 +4,7 @@ Welcome to LeetCode-75, a repository dedicated to solving 75 LeetCode problems c
 
 📚 **Purpose:**
 
-This repository is curated to provide a comprehensive set of problems aimed at enhancing my skills in various areas of coding. As an junior developer brushing up on my skills, these problems offer valuable practice and insight.
+This repository is curated to provide a comprehensive set of problems aimed at enhancing my skills in various areas of coding. As a junior developer brushing up on my skills, these problems offer valuable practice and insight.
 
 🔍 **Topics Covered:**
 
@@ -21,7 +21,7 @@ This repository is curated to provide a comprehensive set of problems aimed at e
 
 🔗 **Problem Links:**
 
-All problems included in this repository can be found in the [Blind 75 LeetCode Questions forum]([https://leetcode.com/discuss/general-disacussion/460599/blind-75-leetcode-questions](https://leetcode.com/discuss/interview-question/460599/Blind-75-LeetCode-Questions). Feel free to explore each problem, attempt them, and discuss your solutions with others in the community.
+All problems included in this repository can be found in the [Blind 75 LeetCode Questions forum](https://leetcode.com/discuss/general-disacussion/460599/blind-75-leetcode-questions). Feel free to explore each problem, attempt them, and discuss your solutions with others in the community.
 
 📬 **Contact:**
 
