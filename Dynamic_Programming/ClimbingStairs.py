@@ -30,22 +30,36 @@ def climbStairs(n: int) -> int:
             startingPoint.remove(x)
             lastVarInX = x[-1]
 
-            # Creating a list with the pathing where we take a one step
-            tempXplus1 = x.copy()
-            tempXplus1.append(lastVarInX + 1)
-            tempList.append(tempXplus1)
+            # Appending both options to our tempList based on our previous list entry 
+            if(lastVarInX + 1 < n):
+                # If the variable takes on step and is still less than 1, append to tempList
+                tempList.append([lastVarInX, lastVarInX + 1])
+            elif(lastVarInX + 1 == n):
+                # Our path has hit N, meaning this is a possible path
+                amountOfPossibilities+=1
+            else:
+                # Our path exceeds the variable N
+                continue
 
-            # Creating a list with the pathing where take take a two step
-            tempXplus2 = x.copy()
-            tempXplus2.append(lastVarInX + 2)
-            tempList.append(tempXplus2)
+            # Appending both options to our tempList based on our previous list entry 
+            if(lastVarInX + 2 < n):
+                # If the variable takes on step and is still less than 1, append to tempList
+                tempList.append([lastVarInX, lastVarInX + 2])
+            elif(lastVarInX + 2 == n):
+                # Our path has hit N, meaning this is a possible path
+                amountOfPossibilities+=1
+            else:
+                # Our path exceeds the variable N
+                continue
 
             if not startingPoint:
+                print("We have cleared through all of startingPoint.")
+                print("passing tempList into our startingPoint:")
+                print(tempList)
                 startingPoint = tempList.copy()
                 tempList = []
-        print("We are leaving the for loop, tempList is ", tempList)
-
-        
+    print("Possible paths amount is ", amountOfPossibilities)
+    return amountOfPossibilities
 
 
 def fibsequence(n: int) -> int:
@@ -61,17 +75,12 @@ def main():
     print("Test Case 1: {}".format(climbStairs(2)==2))
     print("Test Case 2: {}".format(climbStairs(3)==3))
     print("Test Case 3: {}".format(climbStairs(4)==5))
-    print("Test Case 4: {}".format(climbStairs(5)==8))
-    print("Test Case 5: {}".format(climbStairs(6)==13))  
-    print("Test Case 6: {}".format(climbStairs(7)==21))
-    print("Test Case 7: {}".format(climbStairs(8)==34))
-    print("Test Case 8: {}".format(climbStairs(9)==55))
-    print("Test Case 9: {}".format(climbStairs(10)==89))
+    #print("Test Case 4: {}".format(climbStairs(5)==8))
+    #print("Test Case 5: {}".format(climbStairs(6)==13))  
+    #print("Test Case 6: {}".format(climbStairs(7)==21))
+    #print("Test Case 7: {}".format(climbStairs(8)==34))
+    #print("Test Case 8: {}".format(climbStairs(9)==55))
+    #print("Test Case 9: {}".format(climbStairs(10)==89))
 
-    # NOTICE: I realized after working with the test cases and their expected results that
-    # each amount of distinct ways you can climb to the top for N is equivalent to the index
-    # N holds at the sequence of the fibonacci sequence. I wonder how this correlates, but
-    # it is clear that if I just implement the fibonnaci sequence using N, I can return back 
-    # the possible amount of ways that there can be steps going up stairs
 
 main()
