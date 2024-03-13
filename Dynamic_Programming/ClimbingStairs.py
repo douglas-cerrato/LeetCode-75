@@ -21,14 +21,32 @@
 
 
 def climbStairs(n: int) -> int:
-    # IDEA: The brute force attempt I am going to try is by making a tree based
-    # on all possible paths of steps we can take. I already know that the fib
-    # sequence returns all possible amounts (I still want to figure out why
-    # this is the case), however I want to try to bruteforce this so I understand 
-    # better. With my decision tree I am going to start at 0, and recursively 
-    # go down a tree of all possibilites. For each node, I can either go 2 steps
-    # or 1, and the plan is to exhaust all possibilities to figure out all paths. 
-    pass
+    startingPoint = [[0]]
+    amountOfPossibilities = 0
+    tempList = []
+
+    while(startingPoint):
+        for x in startingPoint:
+            startingPoint.remove(x)
+            lastVarInX = x[-1]
+
+            # Creating a list with the pathing where we take a one step
+            tempXplus1 = x.copy()
+            tempXplus1.append(lastVarInX + 1)
+            tempList.append(tempXplus1)
+
+            # Creating a list with the pathing where take take a two step
+            tempXplus2 = x.copy()
+            tempXplus2.append(lastVarInX + 2)
+            tempList.append(tempXplus2)
+
+            if not startingPoint:
+                startingPoint = tempList.copy()
+                tempList = []
+        print("We are leaving the for loop, tempList is ", tempList)
+
+        
+
 
 def fibsequence(n: int) -> int:
     x,y = 0,1
