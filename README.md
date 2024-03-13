@@ -21,7 +21,7 @@ This repository is curated to provide a comprehensive set of problems aimed at e
 
 🔗 **Problem Links:**
 
-All problems included in this repository can be found in the [Blind 75 LeetCode Questions forum](https://leetcode.com/discuss/general-disacussion/460599/blind-75-leetcode-questions). Feel free to explore each problem, attempt them, and discuss your solutions with others in the community.
+All problems included in this repository can be found in the [Blind 75 LeetCode Questions forum](https://leetcode.com/discuss/interview-question/460599/Blind-75-LeetCode-Questions). Feel free to explore each problem, attempt them, and discuss your solutions with others in the community.
 
 📬 **Contact:**
 
