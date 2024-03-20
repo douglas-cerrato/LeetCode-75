@@ -2,11 +2,8 @@ def maxProfit(prices: list[int]) -> int:
     highestPrice = 0
     for indexX, x in enumerate(prices):
         for y in range(indexX+1, len(prices)):
-
-            if (x < prices[y]):
-                tempPrice = prices[y] - x
-                if(tempPrice > highestPrice): 
-                    highestPrice = tempPrice
+            if (x < prices[y] and (prices[y] - x) > highestPrice):
+                highestPrice = prices[y] - x
     
     return highestPrice
 
