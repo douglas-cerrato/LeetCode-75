@@ -1,11 +1,13 @@
 def containsDuplicate(nums: list[int]) -> bool:
-        for indexX, x in enumerate(nums):
-            newNums = nums[indexX+1:]
-            print(f"newNums is {newNums}")
-            if(x in newNums):
-                return True
-        
-        return False
+    for indexX, x in enumerate(nums):
+        if indexX < len(nums) - 1:
+            if x < nums[indexX+1]:
+                continue
+            else:
+                # Iterate and compare / swap until the number ahead is bigger and
+                # the number behind is smaller. If the number behind is ever equal
+                # to the number we are passing down, then return True, else when full
+                # list is sorted, return False
 
 
 print("Test Case 1: ", containsDuplicate([1,2,3,1])==True)
