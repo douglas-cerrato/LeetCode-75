@@ -8,22 +8,22 @@ def containsDuplicate(nums: list[int]) -> bool:
                 # the number behind is smaller. If the number behind is ever equal
                 # to the number we are passing down, then return True, else when full
                 # list is sorted, return False
-                #print(f"indexX is < len(nums), our variable we are looking at is {x} > {nums[indexX+1]}")
+                
+                # Here we use y in a for loop from the beginning of the list to position x
+                # with the intention of iterating backwards through the list starting at indexX + 1
+                # We are iterating backwards so we can get the smaller number in the comparison,
+                # and move it backwards until it is in the correct position it needs to be in 
+                print(f"The variable that started this chain is X: {x}")
                 for y in range(0, indexX+1):
-                    print(f"\nList before the swap {nums}")
-                    #print(f"range from the back to the front is {(indexX+1) - y}")
-                    #print(f"The variable we are currently looking at before swap is {nums[(indexX) - y]}")
+                    print(f"Before the swap is the variable we are at is {nums[indexX - y]} and the variable ahead that is smaller is {nums[(indexX+1) - y]}")
+                    print(f"Before the swap the list is {nums}")
                     tempVar = nums[(indexX+1) - y]
                     nums[(indexX+1) - y] = nums[(indexX) - y]
                     nums[(indexX) - y] = tempVar
-                    print(f"\nList is {nums}")
-                    print("\n\nBefore the if to see if there is a match\n---------------------------------")
 
-                    print(f"\nindexX - y is {indexX - y} or tempVar {tempVar} > {nums[(indexX - 1) - y]} nums[(indexX - 1) - y]")
+                    print(f"After the swap the list is {nums}")
                     if((indexX - y) == 0 or (tempVar > nums[(indexX-1) - y])):
                         if(tempVar == nums[(indexX-1)]):
-                            print("tempVar: {} nums[(indexX-1)]: {}".format(tempVar, nums[(indexX-1)]))
-                            print("List after finding a duplicate: ", nums)
                             return True
                         break
 
