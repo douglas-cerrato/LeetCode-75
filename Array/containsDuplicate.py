@@ -1,27 +1,41 @@
 def containsDuplicate(nums: list[int]) -> bool:
     for indexX, x in enumerate(nums):
         if indexX < len(nums) - 1:
-            if x < nums[indexX+1]:
+            # Declaring index of the Value ahead of X, which we
+            # use to compare to see if we need to sort the number
+            # into the correct position
+            frontOfX = indexX+1
+            if x < nums[frontOfX]:
                 continue
             else:
-                # Iterate and compare / swap until the number ahead is bigger and
-                # the number behind is smaller. If the number behind is ever equal
-                # to the number we are passing down, then return True, else when full
-                # list is sorted, return False
-                
-                # Here we use y in a for loop from the beginning of the list to position x
-                # with the intention of iterating backwards through the list starting at indexX + 1
-                # We are iterating backwards so we can get the smaller number in the comparison,
-                # and move it backwards until it is in the correct position it needs to be in 
-                print(f"The variable that started this chain is X: {x}")
-                for y in range(0, indexX+1):
-                    print(f"Before the swap is the variable we are at is {nums[indexX - y]} and the variable ahead that is smaller is {nums[(indexX+1) - y]}")
-                    print(f"Before the swap the list is {nums}")
-                    tempVar = nums[(indexX+1) - y]
-                    nums[(indexX+1) - y] = nums[(indexX) - y]
-                    nums[(indexX) - y] = tempVar
+                # Creating a list from 0 to the variable infront of X
+                for y in range(0, frontOfX):
+
+                    # Declaring inverse index so we compare values from the 
+                    # end of the list and work our way to the front
+                    inverseOfFOX = frontOfX - y # inverseOfFrontOFX
+                    inverseOfXI = indexX - y #inverseOfXIndex
+
+                    # Swapping the number at the end of the list 
+                    # with the variable before it
+                    print(f"Nums is {nums}")
+                    print(f"\n\nInverse of Front of X Index: {inverseOfFOX} Value: {nums[inverseOfFOX]}")
+                    print(f"Inverse of X Index: {inverseOfXI} Value: {nums[inverseOfXI]}\n\n")
+                    tempVar = nums[inverseOfFOX]
+                    nums[inverseOfFOX] = nums[inverseOfXI]
+                    nums[inverseOfXI] = tempVar
+
+                    print(f"\n\n\n FOR TESTING: tempVar AFTER THE ABOVE SWAP ^^^^ IS: {tempVar}\n\n\n")
 
                     print(f"After the swap the list is {nums}")
+
+                    # If we moved this number to the first position in the list
+                    if(inverseOfXI == 0):
+                        break
+                    
+                    inverseOfBOX = (indexX-1) - y #inverseOfBackOfXI
+                    print(f"tempVar after the swap is {tempVar} and valueBeforeX is {nums[inverseOfBOX]}")
+
                     if((indexX - y) == 0 or (tempVar > nums[(indexX-1) - y])):
                         if(tempVar == nums[(indexX-1)]):
                             return True
