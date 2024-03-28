@@ -7,6 +7,9 @@ def containsDuplicate(nums: list[int]) -> bool:
             frontOfX = indexX+1
             if x < nums[frontOfX]:
                 continue
+            # If x is the same variale as the variable ahead of it
+            # TODO: Look into this, because checking for duplicates early on might
+            # help shred off more runtime in the program 
             elif(x == nums[frontOfX]):
                 return True
             else:
@@ -30,9 +33,13 @@ def containsDuplicate(nums: list[int]) -> bool:
                     
                     inverseOfBOX = (indexX-1) - y #inverseOfBackOfXI
 
+                    # If the variable behind our positioned variable we have been 
+                    # shifting is a match, then return True (we found a match)
                     if(tempVar == nums[inverseOfBOX]):
                         return True
                     
+                    # If the variable is bigger then the variable behind it
+                    # we have sorted this number correctly 
                     if(tempVar > nums[inverseOfBOX]):
                         break
     return False
