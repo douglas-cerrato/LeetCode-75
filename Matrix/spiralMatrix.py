@@ -52,9 +52,15 @@ def spiralOrder(matrix: list[list[int]]) -> list[int]:
             
             # Bottom Left of Matrix
             if(x == 0):
-                
-        
-        
+    
+    # There is a similarity here, that we are checking for the far Left and Right 
+    # in both variations of checking for top and bottom. I think we can simplify this    
+    
+    # Some rules to help better understand how to solve this:
+    # If we are at the top, move right, but if we are at top right, move down
+    # If we are at the right, move down, but if we are bottom right, move left
+    # If we are at the bottom, move left, but if we are at the bottom left, move up
+    # If we are at the left, move up, but if we are at the top left, move right    
 
     return [0,0]
 
