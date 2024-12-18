@@ -1,4 +1,6 @@
 def spiralOrder(matrix: list[list[int]]) -> list[int]:
+    theMatrix = matrix
+    returnList = []
     # Point of Function is to spiral through a matrix,
     # and return the value in each index in a ordered list 
     
@@ -20,18 +22,37 @@ def spiralOrder(matrix: list[list[int]]) -> list[int]:
 
     # Assuming we view each index in this matrix as a (x,y) coordinate
 
-    # Right: y + 1
-    # Down: x + 1
-    # Left: y - 1
-    # Up: x - 1
+    # Right: x + 1
+    # Down: y + 1
+    # Left: x - 1
+    # Up: y - 1
 
     # This would mean we would have to add one position unit to either x or y
     # to view the current value at that coordinate. So now just need to figure out
     # how to spiral through the matrix (with hopes of doing with the fastest time
     # complexity)
 
-    for index, value in enumerate(matrix):
-        print(f"Index: {index} Value {value}")
+
+    x = 0
+    y = 0
+    while(theMatrix):
+        # We are at the top of the list. Unless we are in the corner we 
+        # iterate forward
+        if(y == 0):
+            # We are at the corner
+            if(x == (len(theMatrix[y]) - 1)):
+                # We have hit a corner, move down one
+                returnList.append(theMatrix[y][x])
+                del theMatrix[y][x]
+                y+=1
+                print(f"The current returnList is {returnList}")
+            else:
+                returnList.append(theMatrix[y][x])
+                del theMatrix[y][x]
+                x+=1
+                print(f"The current returnList is {returnList}")
+        
+        
 
     return [0,0]
 
