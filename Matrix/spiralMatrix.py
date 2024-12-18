@@ -36,21 +36,23 @@ def spiralOrder(matrix: list[list[int]]) -> list[int]:
     x = 0
     y = 0
     while(theMatrix):
-        # We are at the top of the list. Unless we are in the corner we 
-        # iterate forward
+        
+        # Top of Matrix
         if(y == 0):
-            # We are at the corner
-            if(x == (len(theMatrix[y]) - 1)):
-                # We have hit a corner, move down one
-                returnList.append(theMatrix[y][x])
-                del theMatrix[y][x]
-                y+=1
-                print(f"The current returnList is {returnList}")
-            else:
-                returnList.append(theMatrix[y][x])
-                del theMatrix[y][x]
-                x+=1
-                print(f"The current returnList is {returnList}")
+            # Top Left of Matrix
+            if(x == 0):
+            
+            # Top Right of Matrix
+            elif(x == len(theMatrix[y]) - 1):
+                
+        # Bottom of Matrix
+        elif(y == len(theMatrix) - 1):
+            # Bottom Right of Matrix
+            if(x == len(theMatrix[y]) - 1):
+            
+            # Bottom Left of Matrix
+            if(x == 0):
+                
         
         
 
